@@ -21,7 +21,7 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{ github.event.repository.name | lower }}
+          image: ${{ github.event.repository.name.toLowerCase() }}
           tags: latest
           registry: ${{ secrets.REGISTRY_HOST }}
           username: ${{ env.DOCKER_USERNAME }}
@@ -35,4 +35,4 @@ jobs:
           password: ${{ env.PASSWORD }}
           script: |
             cd /var/www/vhosts/jperret.dev
-            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ github.event.repository.name | lower }}:latest && docker compose up -d
+            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ github.event.repository.name.toLowerCase() }}:latest && docker compose up -d
