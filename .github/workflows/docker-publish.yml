@@ -18,10 +18,14 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Set Image Name
+        id: set_image_name
+        run: echo "::set-output name=image_name::$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')"
+
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{ github.event.repository.name.toLowerCase() }}
+          image: ${{ steps.set_image_name.outputs.image_name }}
           tags: latest
           registry: ${{ secrets.REGISTRY_HOST }}
           username: ${{ env.DOCKER_USERNAME }}
@@ -35,4 +39,4 @@ jobs:
           password: ${{ env.PASSWORD }}
           script: |
             cd /var/www/vhosts/jperret.dev
-            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ github.event.repository.name.toLowerCase() }}:latest && docker compose up -d
+            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ steps.set_image_name.outputs.image_name }}:latest && docker compose up -d
