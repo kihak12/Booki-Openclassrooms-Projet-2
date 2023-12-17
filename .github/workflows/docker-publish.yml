@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ${{ secrets.REGISTRY_HOST }}
-  IMAGE_NAME: ${{ github.event.repository.name }}
+  IMAGE_NAME: ${{ lowercase(github.event.repository.name) }}
 jobs:
 
   build:
@@ -20,7 +20,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
-          image: ${{ github.event.repository.name }}
+          image: ${{ lowercase(github.event.repository.name) }}
           tags: latest
           registry: ${{ secrets.REGISTRY_HOST }}
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -34,4 +34,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/vhosts/jperret.dev
-            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ github.event.repository.name }}:latest && docker compose up -d
+            docker compose down && docker image rm ${{ secrets.REGISTRY_HOST }}/${{ lowercase(github.event.repository.name) }}:latest && docker compose up -d
