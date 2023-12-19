@@ -252,8 +252,9 @@ header {
     justify-content: center;
     align-items: center;
     height: 24px;
-    width: 24px;
+    min-width: 24px;
     font-size: 10px;
+    line-height: 12px;
     border: 1px var(--main-bg-color) solid;
     border-radius: 25px;
 }
