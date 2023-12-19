@@ -36,5 +36,9 @@
     }
 
     /*********** Header ***********/
-
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
 }
