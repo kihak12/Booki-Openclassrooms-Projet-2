@@ -15,23 +15,30 @@
         padding: 30px;
     }
 
-    .header-button {
+    .header-link {
         height: auto;
         padding: 0 0 15px 0;
+        text-align: center;
     }
 
-    .-button-line:hover {
-        border-top: 2px #ffffff00 solid;
+    .-link-line {
+        border: 0;
+        border-bottom: 2px var(--main-bg-color) solid;
+    }
+
+    .-link-line:hover {
+        border: 0;
         border-bottom: 2px var(--main-color) solid;
     }
 
     .header-navigation {
         gap: 0;
         width: 100%;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .header-navigation button {
+    .header-navigation a {
         flex-grow: 1;
     }
 
