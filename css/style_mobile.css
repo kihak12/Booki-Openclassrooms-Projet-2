@@ -97,4 +97,34 @@
         font-size: 22px;
     }
 
+    .hebergements-and-populaires {
+        flex-direction: column-reverse;
+        gap: 0;
+
+        section {
+            border-radius: 0;
+        }
+
+        .populaires-cards {
+            flex-direction: column;
+
+            a {
+                width: 100%;
+            }
+
+            .card {
+                margin-top: 15px;
+            }
+        }
+
+        .hebergements {
+            background-color: #ffffff;
+            gap: 15px;
+        }
+
+        .hebergements-cards {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+    }
 }
