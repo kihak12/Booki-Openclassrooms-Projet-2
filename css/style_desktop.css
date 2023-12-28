@@ -396,3 +396,28 @@ header {
         }
     }
 }
+
+.footer-container {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 25px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-header {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.footer-link {
+    font-size: 16px;
+    font-weight: 400;
+    list-style-type: none;
+}

@@ -127,4 +127,19 @@
             gap: 15px;
         }
     }
+
+    .activitees-a-marseille .activitees-cards {
+        gap: 15px;
+        grid-template-columns: 1fr;
+
+        img {
+            height: 141px;
+        }
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 30px;
+    }
 }
