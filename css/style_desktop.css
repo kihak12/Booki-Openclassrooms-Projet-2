@@ -44,6 +44,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    margin: auto;
 }
 
 a {
@@ -387,12 +388,14 @@ header {
             height: 380px;
             width: 100%;
             border-radius: 20px 20px 0 0;
+            border: 1px solid red;
         }
 
         h3 {
             font-size: 16px;
             font-weight: 700;
             padding: 20px 19px;
+            border: 1px solid red;
         }
     }
 }
