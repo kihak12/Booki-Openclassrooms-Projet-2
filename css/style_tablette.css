@@ -41,13 +41,11 @@
         gap: 20px;
     }
 
-    .activitees-a-marseille .activitees-cards {
-        h3 {
-            font-size: 16px;
-        }
+    .activitees-a-marseille .activitees-cards h3 {
+        font-size: 16px;
+    }
 
-        img {
-            height: 200px;
-        }
+    .activitees-a-marseille .activitees-cards img {
+        height: 200px;
     }
 }
