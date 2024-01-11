@@ -63,13 +63,13 @@
 
     button.search-bar-submit-icon {
         position: relative;
-        display: flex !important;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
 
     button.search-bar-submit-icon i {
-        color: #fff !important;
+        color: #fff;
     }
 
     button.search-bar-submit-icon::after {
